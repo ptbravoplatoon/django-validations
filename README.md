@@ -1,4 +1,4 @@
-# Active Record Validations
+# Validations
 
 More than just preventing "bad" or "incomplete" data, an application's models can enforce domain rules & requirements. Most applications take a layered approach to data integrity.
 
