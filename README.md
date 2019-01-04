@@ -36,7 +36,7 @@ The last batch of tests will require you to write your own validations.
 ### Release 0
 Run the test with the following command. 
 ```bash
-python 3 manage.py tests
+python3 manage.py tests
 ```
 If you get an error saying the test db already exists you should be able to type `yes` to destroy it and create a new one. 
 
