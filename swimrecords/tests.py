@@ -3,7 +3,6 @@ from .models import SwimRecord
 from django.core.exceptions import ValidationError
 from datetime import datetime, timedelta 
 
-# Create your tests here.
 class SwimRecordTestCase(TestCase):
 
   record = SwimRecord()
@@ -68,20 +67,9 @@ class SwimRecordTestCase(TestCase):
   
   def test_08_no_break_record_before_set_record(self):
     """does not allow records to be broken before the record_date"""
-    record_date = datetime.today()
-    record_broken_date = datetime.today() - timedelta(days=1)
-    record = SwimRecord(record_date=record_date, record_broken_date=record_broken_date)
+    record = SwimRecord(first_name='j',last_name='j',team_name='k',relay=True,stroke='butterfly',distance=100,record_date=datetime.today(),record_broken_date=(datetime.today() - timedelta(days=1)))
     try: 
-      record.full_clean()
+      record.save()
     except ValidationError as e:
       self.assertTrue("Can't break record before record was set." in e.message_dict['record_broken_date'])
     
-
- 
-  
-
-  
-  
-
-
-
