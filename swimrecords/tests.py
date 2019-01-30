@@ -58,8 +58,8 @@ class SwimRecordTestCase(TestCase):
 
   def test_07_no_future_records(self):
     """does not allow records to be set in the future"""
-    record_broken = datetime.today() + timedelta(days=1)
-    record = SwimRecord(record_date=record_date)
+    bad_date = datetime.today() + timedelta(days=1)
+    record = SwimRecord(record_date=bad_date)
     try: 
       record.full_clean()
     except ValidationError as e:
