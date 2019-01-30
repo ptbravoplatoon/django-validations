@@ -51,6 +51,7 @@ Run the test with the following command.
 ```bash
 python manage.py tests
 ```
+The first four tests will pass because of the nature of `full_clean()`. We've commented out the attributes in the model. Your job is to figure out what code needs to be added to each attribute to truly pass each test. 
 If you get an error saying the test db already exists you should be able to type `yes` to destroy it and create a new one. 
 
 ### Release 2
