@@ -54,7 +54,7 @@ class SwimRecordTestCase(TestCase):
     try: 
       distance_record.full_clean()
     except ValidationError as e:
-      self.assertTrue("20 is not greater than or equal to 50" in e.message_dict['distance'])
+      self.assertTrue("Ensure this value is greater than or equal to 50." in e.message_dict['distance'])
 
   def test_07_no_future_records(self):
     """does not allow records to be set in the future"""
