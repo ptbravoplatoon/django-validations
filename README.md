@@ -33,7 +33,7 @@ This challenge will have you exploring the django docs (and any other resources 
 
 The last batch of tests will require you to write your own validations. 
 
-## Release 0: Setup
+### Release 0: Setup
 Create a virtual env. Start it up. Then tell pip to read the `requirements.txt` file and install all the requirements. 
 
 ```
