@@ -29,7 +29,7 @@ The final level of validation is usually performed by the database. Often with `
 
 -----
 ## Challenge
-This challenge will have you exploring the django docs (and any other resources you find online) to resolve some errors and ultimately make the tests pass. We are working with one model. The attributes are written for you but they are incomplete. You'll have to add some settings to what is there to get the first few tests to pass. 
+This challenge will have you exploring the Django docs (and any other resources you find online) to resolve some errors and ultimately make the tests pass. We are working with one model. The attributes are written for you and commented out - they are also incomplete. You'll have to add some settings to what is there to get the first few tests to pass.
 
 The last batch of tests will require you to write your own validations. 
 
@@ -37,13 +37,11 @@ The last batch of tests will require you to write your own validations.
 Create a virtual env. Start it up. Then tell pip to read the `requirements.txt` file and install all the requirements. 
 
 ```
-
 python -m venv venv 
 
 source venv/bin/activate
 
 pip install -r requirements.txt
-
 ```
 
 ### Release 1
@@ -51,8 +49,12 @@ Run the test with the following command.
 ```bash
 python manage.py tests
 ```
-The first four tests will pass because of the nature of `full_clean()`. We've commented out the attributes in the model. Your job is to figure out what code needs to be added to each attribute to truly pass each test. 
-If you get an error saying the test db already exists you should be able to type `yes` to destroy it and create a new one. 
+
+The first four tests will pass because of the nature of `full_clean()`. We've commented out the attributes in the model. Your job is to figure out what code needs to be added to each attribute to truly pass each test.
+
+If you get an error saying the test db already exists you should be able to type `yes` to destroy it and create a new one.
+
+Using the skeleton found in `models.py`, your job is to uncomment out each column one by one and make the tests pass.
 
 ### Release 2
 This challenge includes one model `SwimRecord`. Follow the tests in `swimrecords/tests.py`, adding any missing validations using those provided by [Django](https://docs.djangoproject.com/en/2.1/ref/validators/)
