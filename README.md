@@ -47,7 +47,7 @@ pip install -r requirements.txt
 ### Release 1
 Run the test with the following command. 
 ```bash
-python manage.py tests
+python manage.py test
 ```
 
 The first four tests will pass because of the nature of `full_clean()`. We've commented out the attributes in the model. Your job is to figure out what code needs to be added to each attribute to truly pass each test.
