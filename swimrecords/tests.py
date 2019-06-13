@@ -1,7 +1,8 @@
 from django.test import TestCase
 from .models import SwimRecord
 from django.core.exceptions import ValidationError
-from datetime import datetime, timedelta 
+from datetime import timedelta
+from django.utils import timezone
 
 class SwimRecordTestCase(TestCase):
 
@@ -57,7 +58,7 @@ class SwimRecordTestCase(TestCase):
 
   def test_07_no_future_records(self):
     """does not allow records to be set in the future"""
-    bad_date = datetime.today() + timedelta(days=1)
+    bad_date = timezone.now() + timedelta(days=1)
     record = SwimRecord(record_date=bad_date)
     try: 
       record.full_clean()
@@ -67,9 +68,10 @@ class SwimRecordTestCase(TestCase):
   
   def test_08_no_break_record_before_set_record(self):
     """does not allow records to be broken before the record_date"""
-    record = SwimRecord(first_name='j',last_name='j',team_name='k',relay=True,stroke='butterfly',distance=100,record_date=datetime.today(),record_broken_date=(datetime.today() - timedelta(days=1)))
-    try: 
-      record.save()
+    record = SwimRecord(first_name='j',last_name='j',team_name='k',relay=True,stroke='butterfly',distance=100,record_date=timezone.now(),record_broken_date=(timezone.now() - timedelta(days=1)))
+    record.save()
+    try:
+      record.full_clean()
     except ValidationError as e:
       self.assertTrue("Can't break record before record was set." in e.message_dict['record_broken_date'])
     
