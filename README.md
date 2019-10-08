@@ -15,10 +15,10 @@ The next level of validation is often performed by the application's models. One
 
 ```Python
 def save(self, *args, **kwargs):
-  if len(self.first_name) < 1
-    raise ValidationError(_('Name must be longer than one letter'), code='invalid')
-  
-  super(SwimRecord, self).save(*args, **kwargs)
+    if len(self.first_name) < 1
+        raise ValidationError(_('Name must be longer than one letter'), code='invalid')
+
+    super(SwimRecord, self).save(*args, **kwargs)
    
 ```
 
