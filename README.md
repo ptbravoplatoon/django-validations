@@ -22,7 +22,7 @@ def save(self, *args, **kwargs):
    
 ```
 
-While this works, it isn't very scalable. [Django](https://www.djangoproject.com/) takes a different approach. 
+While this works, it isn't very scalable. [Django](https://docs.djangoproject.com/en/3.0/ref/validators/) takes a different approach. 
 
 ### Database
 The final level of validation is usually performed by the database. Often with `NOT NULL` constraints or particular column types (`integer` vs `varchar(255)` or `char(14)`).
