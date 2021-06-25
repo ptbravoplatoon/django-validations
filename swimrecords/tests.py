@@ -42,7 +42,7 @@ class SwimRecordTestCase(TestCase):
         try:
             stroke_record.full_clean()
         except ValidationError as e:
-            self.assertTrue("doggie paddle is not a valid stroke" in e.message_dict['stroke'])
+            self.assertTrue("doggie paddle is not a valid stroke." in e.message_dict['stroke'])
 
     def test_06_valid_distance(self):
         """must be greater than or equal to 50"""
